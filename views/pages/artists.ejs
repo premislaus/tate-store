@@ -1,0 +1,17 @@
+<% include ../partials/head %>
+<div class="wrapper">
+    <ul class="nv-b">
+        <li class="nv-g">Browse by </li>
+        <li><a href="/prints/artworks">Artworks</a></li>
+        <li><a class="ac" href="/prints/artists">Artists</a></li>
+        <li><a href="/prints/artworks">Genre</a></li>
+    </ul>
+    <div class="container">
+        <% artist.forEach((artist) => { %>
+        <div class="artists-list">
+            <a class="" href="/prints/artists/<%= artist.id %>"><p><%- artist.name %></p></a>
+        </div>
+        <% }) %>
+    </div>
+</div>
+<% include ../partials/foot %>

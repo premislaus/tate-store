@@ -1,0 +1,33 @@
+<% include ../partials/head %>
+<div class="wrapper">
+    <ul class="nv-b">
+        <li class="nv-g">Browse by </li>
+        <li><a class="ac" href="/prints/artworks">Artworks</a></li>
+        <li><a href="/prints/artists">Artists</a></li>
+        <li><a href="/prints/artworks">Genre</a></li>
+    </ul>
+    <div class="rt-wrapper">
+        <% artwork.forEach((artwork) => { %>
+        <div class="rt-b">
+            <a class="rt-href" href="/prints/artworks/<%= artwork.id %>">
+                <img src="<%= artwork.thumbnailUrl %>">
+            </a>
+            <h1><a href=""><%= artwork.title %></a></h1>
+            <div class="pr-t">€344</div>
+            <p><%- artwork.medium %></p>
+            <script>
+                const art = [];
+                document.getElementById("demo").innerHTML = art;
+
+                function myFunction() {
+                    art.push("<%= artwork.title %>");
+                    document.getElementById("demo").innerHTML = art;
+                }
+            </script>
+            <a class="add-b" onclick="myFunction()">Add to Basket</a>
+        </div>
+        <% }) %>
+    </div>
+</div>
+
+<% include ../partials/foot %>

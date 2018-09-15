@@ -1,0 +1,12 @@
+<% include ../partials/head %>
+<div class="wrapper">
+    <div class="rt-wrapper">
+        <div class="rt-b" style="width: 50%;">
+            <img src="<%= artwork.thumbnailUrl %>">
+            <h1><%= artwork.title %></h1>
+            <%- artwork.artist %>
+            <%- artwork.medium %>
+        </div>
+    </div>
+</div>
+<% include ../partials/foot %>
